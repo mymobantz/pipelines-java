@@ -21,11 +21,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-variables:
-  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
-  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
-
-
 - task: Cache@2
   inputs:
     key: 'maven | "$(Agent.OS)" | **/pom.xml'
@@ -36,3 +31,8 @@ variables:
   displayName: Cache Maven local repo
 
 - script: mvn install -B -e
+
+variables:
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
+
