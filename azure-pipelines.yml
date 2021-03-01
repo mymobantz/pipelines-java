@@ -15,7 +15,7 @@ variables:
 
 # name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
-name: version=$(grep version pom.xml | grep -v '<?xml' | grep '<version>'|head -n 1|awk '{print $1}'| cut -d'>' -f 2 | cut -d'<' -f 1)
+version=$(grep version pom.xml | grep -v '<?xml' | grep '<version>'|head -n 1|awk '{print $1}'| cut -d'>' -f 2 | cut -d'<' -f 1)
 
 
 
