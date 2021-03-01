@@ -48,5 +48,5 @@ steps:
 # - script: echo '$(Build.BuildNumber)' # outputs customized build number like project_def_master_20200828.1
 
 
--script: echo mvn --version
--script: mvn -N -q DforceStdout help:evaluate -Dexpression-project.version
+- script: echo mvn --version
+- script: mvn -N -q DforceStdout help:evaluate -Dexpression-project.version
