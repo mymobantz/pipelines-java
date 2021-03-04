@@ -24,7 +24,7 @@ variables:
 
 steps:
 - task: Maven@3
-  condition: false
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
@@ -36,7 +36,7 @@ steps:
     goals: 'package'
 
 - task: Cache@2
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
     key: 'maven | "$(Agent.OS)" | **/pom.xml'
     restoreKeys: |
