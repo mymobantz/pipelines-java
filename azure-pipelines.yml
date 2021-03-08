@@ -33,7 +33,7 @@ variables:
 steps:
 
 - task: Maven@3
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
