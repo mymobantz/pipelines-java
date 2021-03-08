@@ -7,14 +7,13 @@
 #trigger:
 #- main
 
-pr:
+trigger:
+  batch: true
   branches:
     include:
-    - master
-    - releases/*
+    - dev_tesbranch
     exclude:
-    - releases/old*
-    - pipelines-java/azure-cache*
+    - azure-cache/*
     
 pool:
   vmImage: 'ubuntu-latest'
