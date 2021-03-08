@@ -11,10 +11,10 @@ pr:
   branches:
     include:
     - master
-    - dev_tesbranch
+    - releases/*
     exclude:
-    - azure-cache
-
+    - releases/old*
+    
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -34,7 +34,7 @@ variables:
 steps:
 
 - task: Maven@3
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
