@@ -10,9 +10,9 @@
 trigger:
   branches:
     include:
-    - azure-pipelines
+    - dev_tesbranch
     exclude:
-    - azure-cache
+    - releases/azure-cache
 
 pool:
   vmImage: 'ubuntu-latest'
