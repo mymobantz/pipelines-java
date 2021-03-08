@@ -11,7 +11,7 @@ trigger:
   batch: true
   branches:
     include:
-    - dev_tesbranch
+    - dev_tesbranch/*
     exclude:
     - azure-cache/*
     
