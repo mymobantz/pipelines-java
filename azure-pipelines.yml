@@ -30,6 +30,9 @@ variables:
 
 
 steps:
+
+condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+
 - task: Maven@3
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
