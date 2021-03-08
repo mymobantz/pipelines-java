@@ -6,13 +6,8 @@
 #trigger:
 #- main
 
-trigger:
-  branches:
-    include:
-    - master
-    - dev_tesbranch
-    exclude:
-    - azure-cache
+trigger: none
+  
 
 pool:
   vmImage: 'ubuntu-latest'
