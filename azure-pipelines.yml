@@ -63,6 +63,8 @@ stages:
         
  - stage: Deploy
    jobs:
+   - deployment: Deploy-multi
+     environment: 'deploy'
    - job: Deploy
      pool:
        vmImage: 'vs2017-win2016'
