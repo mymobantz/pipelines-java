@@ -18,7 +18,7 @@
   </dependencies>
 
   <build>
-    <finalName>hellopeople</finalName>
+    <finalName>helloworld</finalName>
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
